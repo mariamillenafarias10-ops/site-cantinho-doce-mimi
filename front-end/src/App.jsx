@@ -3,8 +3,9 @@ import { useState } from "react";
 import axios from "axios";
 import "./App.css";
 
-baseURL: import.meta.env.VITE_API_URL
-
+const api = axios.create({
+  baseURL: import.meta.env.VITE_API_URL,
+});
 
 export default function App() {
   const [pedidos, setPedidos] = useState([]);
@@ -216,7 +217,6 @@ export default function App() {
 
         {error && <p style={{ color: "red", marginTop: 10 }}>{error}</p>}
 
-        {/* ✅ LISTA (resumo do pedido + PIX) */}
         <section className="lista">
           {pedidos.length === 0 ? (
             <p>Nenhum pedido ainda.</p>
@@ -230,7 +230,7 @@ export default function App() {
                   R$ {p.total ? Number(p.total).toFixed(2) : "0.00"}
                 </div>
 
-                {/* PIX */}
+           
                 <p className="pix-text">
                   Pague via PIX e envie o comprovante no WhatsApp para confirmarmos
                   seu pedido.

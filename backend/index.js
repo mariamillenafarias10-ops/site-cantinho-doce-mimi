@@ -12,25 +12,24 @@ const app = express();
 app.use(express.json());
 const allowedOrigins = [
   "http://localhost:5173",
-  process.env.FRONTEND_URL, 
-].filter(Boolean);
+  "https://cantinho-doce-mimi.netlify.app",
+  
+];
 
 app.use(cors({
-  origin: (origin, cb) => {
+  origin: function (origin, callback) {
    
-    if (!origin) return cb(null, true);
-    if (allowedOrigins.includes(origin)) return cb(null, true);
-    return cb(new Error("Not allowed by CORS"));
+    if (!origin) return callback(null, true);
+
+    if (allowedOrigins.includes(origin)) return callback(null, true);
+
+    return callback(new Error("Not allowed by CORS: " + origin));
   },
-  credentials: true,
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "x-session-id"],
 }));
 
-app.use((err, req, res, next) => {
-  if (err && err.message === "Not allowed by CORS") {
-    return res.status(403).json({ error: "Origem não permitida (CORS)." });
-  }
-  next(err);
-});
+app.options("*", cors());
 
 function validarPedido(body) {
   const { nome, sabor, quantidade, endereco, whatsapp } = body;
