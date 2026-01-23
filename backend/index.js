@@ -11,30 +11,17 @@ const app = express();
 
 app.use(express.json());
 
-const allowedOrigins = [
-  "http://localhost:5173",
-  "https://cantinho-doce-mimi.netlify.app",
-];
-
-const corsOptions = {
-  origin: (origin, callback) => {
-    
-    if (!origin) return callback(null, true);
-
-    if (allowedOrigins.includes(origin)) return callback(null, true);
-
-    return callback(new Error("Not allowed by CORS: " + origin));
-  },
-  credentials: false,
+app.use(cors({
+  origin: [
+    "http://localhost:5173",
+    "https://cantinho-doce-mimi.netlify.app"
+  ],
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "x-session-id"],
-  optionsSuccessStatus: 204,
-};
+  credentials: true
+}));
 
-app.use(cors(corsOptions));
-
-
-app.options("*", cors(corsOptions));
+app.options("*", cors());
 
 
 function validarPedido(body) {
