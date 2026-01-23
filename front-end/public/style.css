@@ -1,0 +1,150 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+
+body {
+  background-color: #dff3e5; 
+  color: #333;
+}
+
+
+.header {
+  text-align: center;
+  padding: 30px 20px 20px;
+    position: relative;
+}
+
+.header h1 {
+  color: #5aa9e6; 
+  font-size: 28px;
+  margin-top: 10px;
+}
+
+
+.voltar {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  background: #ffffff;
+  border: 2px solid #ff5c8a;
+  padding: 8px 14px;
+  border-radius: 16px;
+  text-decoration: none;
+}
+
+.voltar:hover {
+  background: #ff5c8a;
+  color: #fff;
+  text-decoration: none;
+}
+
+
+.subtitulo {
+  text-align: center;
+  margin: 20px 0 30px;
+   margin-top: 10px;
+  margin-bottom: 25px;
+}
+
+.subtitulo h2 {
+  color: #ff5c8a; 
+  margin-bottom: 8px;
+}
+
+.subtitulo p {
+  color: #555;
+  font-size: 14px;
+    margin-top: 6px;
+}
+.cake {
+  width: 120px;      
+  max-width: 100%;
+  display: block;
+  margin: 30px auto; 
+  opacity: 0.6;      
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px 60px;
+}
+
+.sabores-lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 22px;
+}
+
+
+.sabores-lista > div {
+  background-color: #ffffff;
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease;
+}
+
+.sabores-lista > div:hover {
+  transform: translateY(-4px);
+}
+
+
+.sabores-lista h2 {
+  color: #5aa9e6; 
+  font-size: 20px;
+  margin-bottom: 6px;
+}
+
+
+.sabores-lista p:nth-of-type(1) {
+  color: #ff5c8a; 
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+
+.sabores-lista p:nth-of-type(2) {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.4;
+}
+
+
+.rodape {
+  background-color: #ff5c8a; 
+  color: #ffffff;
+  text-align: center;
+  padding: 24px 10px;
+  font-size: 14px;
+}
+
+.rodape p {
+  margin: 6px 0;
+}
+
+.rodape a {
+  color: #ffffff;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.rodape a:hover {
+  text-decoration: underline;
+}
+
+
+@media (max-width: 768px) {
+  .header h1 {
+    font-size: 24px;
+  }
+
+  .sabores-lista {
+    grid-template-columns: 1fr;
+  }
+}
