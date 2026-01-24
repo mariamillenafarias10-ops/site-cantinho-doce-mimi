@@ -76,11 +76,30 @@ app.post("/pedidos", async (req, res) => {
 
   try {
     const result = await pool.query(
-      `INSERT INTO pedidos (session_id, nome, sabor, quantidade, endereco, whatsapp, total)
-       VALUES ($1,$2,$3,$4,$5,$6,$7)
-       RETURNING id, nome, sabor, quantidade, total`,
-      [sessionId, nome, sabor, quantidade, endereco, whatsapp, total]
-    );
+  `
+  INSERT INTO pedidos (
+    nome,
+    sabor,
+    quantidade,
+    total,
+    endereco,
+    whatsapp,
+    session_id
+  )
+  VALUES ($1, $2, $3, $4, $5, $6, $7)
+  RETURNING id, nome, sabor, quantidade, total
+  `,
+  [
+    nome,
+    sabor,
+    quantidade,
+    total,
+    endereco,
+    whatsapp,
+    sessionId
+  ]
+);
+
 
     return res.status(201).json({ ok: true, sessionId, pedido: result.rows[0] });
   } catch (e) {
