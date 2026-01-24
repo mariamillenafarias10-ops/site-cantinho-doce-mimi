@@ -12,7 +12,6 @@ const app = express();
 app.use(express.json());
 
 
-// ✅ CORS certo pro Netlify + localhost
 const allowedOrigins = [
   "http://localhost:5173",
   "https://cantinho-doce-mimi.netlify.app",
@@ -23,7 +22,6 @@ const corsOptions = {
    
     if (!origin) return callback(null, true);
 
-   
     if (allowedOrigins.includes(origin)) return callback(null, true);
 
     return callback(new Error("Not allowed by CORS: " + origin));
@@ -36,8 +34,7 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 
-
-app.options("*", cors(corsOptions));
+app.options(/.*/, cors(corsOptions));
 
 
 function validarPedido(body) {
