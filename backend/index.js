@@ -1,5 +1,6 @@
-require("dotenv").config();
 
+
+require("dotenv").config();
 
 const pool = require("./db");
 const { v4: uuidv4 } = require("uuid");
@@ -8,8 +9,10 @@ const express = require("express");
 const cors = require("cors");
 
 const app = express();
-
 app.use(express.json());
+
+
+
 
 
 const allowedOrigins = [
