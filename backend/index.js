@@ -77,7 +77,7 @@ app.post("/pedidos", async (req, res) => {
   try {
     const result = await pool.query(
   `
-  INSERT INTO pedidos (
+  INSERT INTO pedidos_bolos (
     nome,
     sabor,
     quantidade,
@@ -115,7 +115,7 @@ app.get("/meus-pedidos", async (req, res) => {
   try {
     const result = await pool.query(
       `SELECT id, nome, sabor, quantidade, total
-       FROM pedidos
+       FROM pedidos_bolos
        WHERE session_id = $1
        ORDER BY id DESC`,
       [sessionId]
@@ -140,7 +140,7 @@ app.get("/adminpedidos", async (req, res) => {
 
   try {
     const result = await pool.query(
-      "SELECT * FROM pedidos ORDER BY id DESC"
+      "SELECT * FROM pedidos_bolos ORDER BY id DESC"
     );
     res.json(result.rows);
   } catch (e) {

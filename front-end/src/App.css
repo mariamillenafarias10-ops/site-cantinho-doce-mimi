@@ -254,7 +254,7 @@ logo {
   margin: 30px auto;
   border: 10px solid #87d5ff;
   padding: 24px;
-   position: relative; /* referência para o card */
+   position: relative; 
     
 }
 
@@ -324,7 +324,7 @@ logo {
     font-size: 34px;
   }
 }
-/* wrapper do resumo + formulário */
+
 .pedido.map{
   display: flex;
   align-items: flex-start;
@@ -335,8 +335,8 @@ logo {
 
 .lista{
   position: absolute;
-  top: 0;                 /* começa no topo do box-form */
-  left: calc(100% + 24px);/* fica ao lado direito da caixa azul */
+  top: 0;                 
+  left: calc(100% + 24px);
   width: 300px;
   padding: 16px;
 

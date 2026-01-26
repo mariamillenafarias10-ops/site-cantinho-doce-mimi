@@ -44,7 +44,7 @@ export default function App() {
   e.preventDefault();
   setError("");
 
-  // valida primeiro (antes de fazer request)
+  
   if (!form.nome.trim() || !form.sabor.trim() || !form.quantidade) {
     setError("Por favor, preencha nome, sabor e quantidade.");
     return;
@@ -59,18 +59,17 @@ export default function App() {
       headers: { "x-session-id": sessionId || "" },
     });
 
-    // salva a sessão (pra manter os pedidos desse cliente enquanto a aba estiver aberta)
+    
     if (res.data.sessionId) {
       sessionStorage.setItem("sessionId", res.data.sessionId);
     }
-
-    // mostra só o pedido desse cliente
+    
     setPedidoAtual(res.data.pedido);
 
-    // (opcional) se você ainda usa pedidos[] em algum lugar, pode manter assim:
+    
     setPedidos([res.data.pedido]);
 
-    // limpa form
+    
     setForm({
       nome: "",
       sabor: "",
@@ -166,7 +165,7 @@ export default function App() {
         <p className="sub">💕Realize seu pedido de bolo!💕</p>
       </header>
 
-      {/* FORM + LISTA (lista fica posicionada via CSS no desktop) */}
+      
       <section className="box-form">
         <form className="pedido-form" onSubmit={onSubmit}>
           <input
@@ -268,7 +267,7 @@ export default function App() {
         </section>
       </section>
 
-      {/* ✅ FOOTER (fora da .lista, fora da .box-form) */}
+      
       <footer className="rodape">
         <p>
           📸 Instagram:{" "}
