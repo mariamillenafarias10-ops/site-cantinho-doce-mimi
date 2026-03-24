@@ -5,25 +5,46 @@ Sistema de pedidos online desenvolvido para um pequeno negócio real.
 🔗 **Acesse o site:**  
 https://cantinho-doce-mimi.netlify.app/
 
-## 🚀 Funcionalidades
-- Envio de pedidos de bolos de pote
-- Cálculo automático de valores
-- Integração front-end e back-end
-- Persistência de dados em PostgreSQL
-- Sessão por cliente
-- Deploy em produção
+O Cantinho Doce da Mimi é uma aplicação web fullstack desenvolvida para automatizar o processo de vendas de bolos de pote artesanais. O projeto nasceu de uma necessidade real minha: aos 18 anos, recém-saída do ensino médio, comecei a vender bolos de pote para conquistar minha independência financeira. Com o negócio crescendo, desenvolvi meu próprio site do zero para automatizar os pedidos — unindo as duas áreas que amo: confeitaria e tecnologia.
+O cliente realiza o pedido diretamente pelo site, visualiza o valor total calculado automaticamente e recebe um QR Code Pix para pagamento, enviando o comprovante via WhatsApp para confirmar o pedido.
 
-## 🛠️ Tecnologias utilizadas
-- HTML, CSS, JavaScript
-- React
-- Node.js + Express
-- PostgreSQL
-- Git & GitHub
-- Netlify (Front-end)
-- Render (Back-end e Banco)
+✨ Funcionalidades
+
+📋 Formulário de pedido com nome, sabor e quantidade
+
+💰 Cálculo automático do valor total
+
+📲 Geração de QR Code Pix para pagamento
+
+💬 Redirecionamento para WhatsApp após o pedido
+
+🗄️ Persistência dos pedidos em banco de dados PostgreSQL
+
+🔐 Controle de sessão por cliente
+
+☁️ Deploy completo em produção (front-end + back-end + banco)
+
+🛠️ **Tecnologias utilizadas**
+
+**Front-end**
+React
+HTML5 & CSS3
+JavaScript
+
+**Back-end**
+Node.js
+Express
+Banco de Dados
+PostgreSQL
+
+**Deploy & Infraestrutura**
+Netlify (Front-end)
+Render (Back-end e Banco de Dados)
+Git & GitHub
 
 ## 📦 Status do projeto
 ✅ Em produção (deploy real)
 
-## 👩‍💻 Desenvolvido por
-Maria (Recife - PE)
+👩‍💻 Autora
+Maria — Estudante de Tecnologia, Recife - PE
+Desenvolvido com 💚 do zero: ideia, design, código, banco e deploy.
